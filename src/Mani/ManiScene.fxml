@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mani.Controller">
+   <children>
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #A09FBA;">
+         <children>
+            <GridPane alignment="CENTER" hgap="5.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ToggleButton fx:id="insertButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#panelChang" prefHeight="70.0" prefWidth="70.0" GridPane.columnIndex="1">
+                     <graphic>
+                        <ImageView fx:id="insertIcon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <effect>
+                              <Bloom />
+                           </effect></ImageView>
+                     </graphic>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="panelSelectGroup" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton fx:id="searchButton" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#panelChang" prefHeight="70.0" prefWidth="70.0" selected="true" textAlignment="CENTER" toggleGroup="$panelSelectGroup">
+                     <graphic>
+                        <ImageView fx:id="searchIcon" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <effect>
+                              <Bloom />
+                           </effect></ImageView>
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton fx:id="listButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#panelChang" prefHeight="70.0" prefWidth="70.0" toggleGroup="$panelSelectGroup" GridPane.columnIndex="2">
+                     <graphic>
+                        <ImageView fx:id="listIcon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <effect>
+                              <Bloom />
+                           </effect></ImageView>
+                     </graphic>
+                  </ToggleButton>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </GridPane>
+         </children></HBox>
+      <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #ffffff;">
+         <children>
+            <AnchorPane fx:id="searchStack" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <fx:include fx:id="searchPanel" source="../FXML/searchPanel.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="insertStack" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" visible="false">
+               <children>
+                  <fx:include fx:id="insertPanel" source="../FXML/insertPanel.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" StackPane.alignment="CENTER" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="listStack" maxHeight="1.7976931348623157E308" style="-fx-background-color: #ffffff;" visible="false" StackPane.alignment="CENTER">
+               <children>
+                  <fx:include fx:id="listPanel" source="../FXML/listPanel.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children></StackPane>
+   </children>
+</VBox>
